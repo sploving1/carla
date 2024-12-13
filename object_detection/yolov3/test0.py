@@ -353,6 +353,10 @@ class BasicSynchronousClient(object):
             self.set_synchronous_mode(True)
             vehicles = self.world.get_actors().filter('vehicle.*')
 
+            tm = self.client.get_trafficmanager(3001)
+            tm_port = tm.get_port()
+            self.car.set_autopilot(True, tm_port)
+
             while True:
                 self.world.tick()
                 self.capture = True
