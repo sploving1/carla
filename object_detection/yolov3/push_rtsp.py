@@ -43,7 +43,7 @@ except ImportError:
 from signal import signal, SIGPIPE, SIG_DFL
 
 signal(SIGPIPE,SIG_DFL)
-VIEW_WIDTH = 640
+VIEW_WIDTH = 960
 VIEW_HEIGHT = 640
 VIEW_FOV = 90
 
@@ -52,7 +52,7 @@ ffmpeg_cmd = ['ffmpeg',
               '-i', '-',
               '-f', 'rawvideo',
               '-r', '25',
-              '-video_size', '96x72',
+              '-video_size', '960x640',
               '-pixel_format', 'rgb24',
               '-c:v', 'libx264', 
               '-preset', 'ultrafast',
